@@ -8,14 +8,14 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Blog</title>
+    <title>BELOGA</title>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/"><i class="fas fa-cube"></i> BLOG</a>
+                <a class="navbar-brand" href="/"><i class="fas fa-cube"></i> BELOGA</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
     </header>
     <main class="h-850"></main>
     <footer class="bg-dark p-2">
-        <p class="text-center text-white line-height-35">BLOG &copy; <?= date('Y') ?> </p>
+        <p class="text-center text-white line-height-35">BELOGA &copy; <?= date('Y') ?> </p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
