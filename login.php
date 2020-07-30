@@ -1,22 +1,24 @@
 <?php
-$page_title = 'Home Page'
+$page_title = 'Login Page'
 ?>
 <?php include 'template/header.php'; ?>
 <main class="h-850">
     <div class="container">
         <section id="page-header">
             <div class="row">
-                <div class="col-12 text-center mt-3">
+                <div class="col-12 mt-3">
                     <h1 class="display-4">
-                        ITS JUST FISH
+                        LOGIN TOY OUR USER SO YOU CAN SEE FISH
                     </h1>
-                    <p>YOU WANT FISH? WE GOT FISH, TALK FISH AND POST FISH.</p>
-                    <p><a class="btn btn-dark" href="register">START FISH</a></p>
+                    <p><a href="register.php">ABOUT FISH BELUGA FISH FISH YES</a></p>
                 </div>
             </div>
+
+        </section>
+        <section id="login-form">
             <div class="row">
-                <div class="col-12 mt-3 text-center">
-                    FEATURED POSTS
+                <div class="col-lg-6">
+
                 </div>
             </div>
         </section>
