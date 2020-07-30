@@ -1,4 +1,5 @@
 <?php
+session_start();
 $page_title = 'About Page'
 ?>
 <?php include 'template/header.php'; ?>

@@ -1,4 +1,6 @@
 <?php
+// START SESSION - MUST BE AT THE TOP OF EVERY PAGE
+session_start();
 
 require_once 'deep/helpers.php';
 
@@ -40,6 +42,23 @@ if (isset($_POST['submit'])) {
     if ($form_valid) {
         // CONNECT TO DATABASE USING MYSQLI WITH CREDENTIALS FROM DB CONFIG
         $link = mysqli_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB);
+        // DESIGN QUERY
+        $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+        // MAKE QUERY TO DB AND GET RESOURCE
+        $result = mysqli_query($link, $sql);
+        // CHECK IF THERE IS A RESOURCE && THERE IS A USER WITH THAT EMAIL AND PASS
+        if ($result && mysqli_num_rows($result) > 0) {
+            // GET DATA AS ASSOCIATIVE ARRAY FROM RESOURCE
+            $user = mysqli_fetch_assoc($result);
+            // SAVE ID AND NAME TO SESSION
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_name'] = $user['name'];
+            // REQUEST BROWSER TO REDIRECT USER TO BLOG.PHP
+            header('location: blog.php');
+        } else {
+            // PUSH ERROR TO SHOW THAT CREDENTIALS ARE WRONG
+            $errors['submit'] = 'Incorrect Credentials';
+        }
     }
 }
 
