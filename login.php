@@ -2,6 +2,13 @@
 // START SESSION - MUST BE AT THE TOP OF EVERY PAGE
 session_start();
 
+// CHECK IF USER IS ALREADY LOGGED IN - IF SO SEND HIM TO BLOG
+if (isset($_SESSION['user_id'])) {
+    header('location: blog.php');
+    // STOP INTERPRETER FROM READING THE REST OF THE CODE TO HELP WITH SPEED
+    exit;
+}
+
 require_once 'deep/helpers.php';
 
 $page_title = 'Login Page';
