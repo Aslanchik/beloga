@@ -1,4 +1,7 @@
 <?php
+
+require_once 'deep/helpers.php';
+
 $page_title = 'Login Page';
 
 // KEEP TRACK OF ERRORS
@@ -33,12 +36,14 @@ if (isset($_POST['submit'])) {
         $errors['password'] = 'Password is required';
     }
 
-    // CHECK IF FORM IS VALID
+    // CHECK IF FORM IS VALID IN DATABASE
     if ($form_valid) {
-        // CHECK VALIDITY OF EMAIL AND PASS VIA MYSQL
-
+        // CONNECT TO DATABASE USING MYSQLI WITH CREDENTIALS FROM DB CONFIG
+        $link = mysqli_connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB);
     }
 }
+
+
 ?>
 
 
@@ -62,7 +67,8 @@ if (isset($_POST['submit'])) {
                     <form method="POST" action="" id="login" autocomplete="off" novalidate>
                         <div class="form-group">
                             <label for="email">* Email</label>
-                            <input class="form-control" type="email" name="email" id="email">
+                            <input value="<?= old('email'); ?>" class="form-control" type="email" name="email"
+                                id="email">
                             <span class="text-danger"> <?= $errors['email']; ?> </span>
                         </div>
                         <div class="form-group">
